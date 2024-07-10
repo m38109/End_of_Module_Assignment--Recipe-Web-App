@@ -9,5 +9,6 @@
     <?php
     print "<p>Today is ".date("l F jS")."</p>\n";
     ?>
+    <p>Hello all!!</p>
 </body>
 </html>
