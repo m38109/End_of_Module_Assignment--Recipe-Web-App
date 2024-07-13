@@ -1,0 +1,87 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+}
+.login-container {
+    max-width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.login-container h2 {
+    text-align: center;
+}
+.login-container input{
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.login-container input[type="submit"] {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    font-size: medium;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.login-container input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* General alert styles */
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    position: relative;
+}
+
+/* Success alert styles */
+.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+/* Danger alert styles */
+.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+
+/* Button to close the alert */
+.alert .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: inherit;
+    border: none;
+    background: none;
+    font-size: 20px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+/* Alert fade transition */
+.alert-dismissible {
+    padding-right: 35px;
+}
+
+/* Alert fade effect */
+.fade {
+    opacity: 0;
+    transition: opacity 0.15s linear;
+}
+
+.show {
+    opacity: 1;
+}
