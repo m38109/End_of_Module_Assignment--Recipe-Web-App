@@ -50,8 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php 
 
     if($exists) { 
-        echo '<div class="alert alert-danger  
-            alert-dismissible fade show" role="alert"> 
+        echo '<div class="alert alert-danger" role="alert"> 
     
         <strong>Error!</strong> '. $exists.' 
        </div>';  
