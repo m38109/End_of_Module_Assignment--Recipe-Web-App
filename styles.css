@@ -64,3 +64,68 @@ body {
     font-size: 0.7em;
     margin-top: 5px;
 }
+
+/* style for recipe page */
+.recipecontainer {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.recipecontainer h1 {
+    color: #4CAF50;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.recipecontainer h2{
+    color: #5bc0de;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.recipecontainer img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.recipecontainer p {
+    padding: 0 20px;
+    text-align: justify;
+}
+
+.recipecontainer ul, ol {
+    padding: 0 40px;
+}
+
+.recipecontainer ul {
+    list-style-type: disc;
+}
+
+.recipecontainer ol {
+    list-style-type: decimal;
+}
+
+.recipecontainer li {
+    margin: 10px 0;
+    line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+    .recipecontainer body {
+        padding: 0 10px;
+    }
+    .recipecontainer h1 {
+        font-size: 1.8em;
+    }
+    .recipecontainer h2 {
+        font-size: 1.4em;
+    }
+    .recipecontainer p, ul, ol {
+        padding: 0 10px;
+    }
+}
