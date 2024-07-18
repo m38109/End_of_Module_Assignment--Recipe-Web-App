@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $stored_hash)) {
             // correct password
             echo "Login sucessful";
-            header("Location: config.php");
+            header("Location: homepage.php");
 
         } else {
             echo "Invaild Password";
