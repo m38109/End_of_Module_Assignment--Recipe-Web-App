@@ -78,7 +78,7 @@ $result = $stmt->get_result();
                 echo "<td>" . $row["rating"]. "</td>";
                 echo "<td>" . $row["cuisine"]. "</td>";
                 echo "<td>" . $row["cookingtime"]. " mins </td>"; 
-                echo "<td><a href='delet_favourite.php?idrecipes=" . $row["recipesid"]. "'>Delete from Favourite</a></td>";
+                echo "<td><a href='delete_favourite.php?idrecipes=" . $row["recipesid"]. "'>Delete</a></td>";
                 echo "</tr>";
         }
     } else {

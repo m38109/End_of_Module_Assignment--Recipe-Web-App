@@ -51,7 +51,9 @@ $steps_result = $conn->query($steps_sql);
 <body>
     <div class="header">
         <h1>Recipe Details</h1>
-        <p class="welcome">Hi, <?php echo $_SESSION['username']; ?><a href="logout.php" class="logout" onclick="confirmLogout()">Logout</a></p>
+        <p class="welcome">Hi, <?php echo $_SESSION['username']; ?><br>
+        <a href="logout.php" class="logout" onclick="confirmLogout()">Logout</a><br>
+        <a href="favouritepage.php">My favourite</a></p>
     </div>
     <div class= recipecontainer>
         <a href="homepage.php" class="back-link">Back to home page</a>
