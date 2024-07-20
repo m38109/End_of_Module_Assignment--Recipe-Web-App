@@ -45,7 +45,9 @@ $result = $conn->query($sql);
     <title>Recipe Homepage</title>
     <link rel="stylesheet" href="styles.css">
     <script>
-        function confirmLogout() {
+        //Log out confirmation
+        function confirmLogout(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
             var username = "<?php echo $_SESSION['username']; ?>";
             if (confirm(username + ", are you sure you want to log out?")) {
                 window.location.href = "logout.php";
@@ -80,7 +82,7 @@ $result = $conn->query($sql);
     <div class="header">
         <h1>Recipe Homepage</h1>    
         <p class="welcome">Hi, <?php echo $_SESSION['username']; ?><br>
-        <a href="logout.php" class="logout" onclick="confirmLogout()">Logout</a><br>
+        <a href="logout.php" class="logout" onclick="confirmLogout(event)">Logout</a><br>
         <a href="favouritepage.php" class="logout">My Favourites</a></p>
     </div>
     <!-- searching -->

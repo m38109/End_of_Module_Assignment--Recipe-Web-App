@@ -40,7 +40,9 @@ $steps_result = $conn->query($steps_sql);
     <title><?php echo htmlspecialchars($recipe['name']); ?></title>
     <link rel="stylesheet" href="styles.css">
     <script>
-        function confirmLogout() {
+        //Log out confirmation
+        function confirmLogout(event) {
+            event.preventDefault(); // Prevent the default anchor behavior
             var username = "<?php echo $_SESSION['username']; ?>";
             if (confirm(username + ", are you sure you want to log out?")) {
                 window.location.href = "logout.php";
@@ -52,7 +54,7 @@ $steps_result = $conn->query($steps_sql);
     <div class="header">
         <h1>Recipe Details</h1>
         <p class="welcome">Hi, <?php echo $_SESSION['username']; ?><br>
-        <a href="logout.php" class="logout" onclick="confirmLogout()">Logout</a><br>
+        <a href="logout.php" class="logout" onclick="confirmLogout(event)">Logout</a><br>
         <a href="favouritepage.php">My favourite</a></p>
     </div>
     <div class= recipecontainer>

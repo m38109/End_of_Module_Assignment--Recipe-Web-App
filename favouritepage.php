@@ -49,12 +49,22 @@ $result = $stmt->get_result();
             message.style.display = 'none';
         }
     }, 2000);
+
+    //Log out confirmation
+    function confirmLogout(event) {
+        event.preventDefault(); // Prevent the default anchor behavior
+        var username = "<?php echo $_SESSION['username']; ?>";
+        if (confirm(username + ", are you sure you want to log out?")) {
+            window.location.href = "logout.php";
+        }
+    }
+    
     </script>
 
     <div class="header">
         <h1>My Favourite</h1>
         <p class="welcome">Hi, <?php echo $_SESSION['username']; ?><br>
-        <a href="logout.php" class="logout" onclick="confirmLogout()">Logout</a><br>
+        <a href="logout.php" class="logout" onclick="confirmLogout(event)">Logout</a><br>
         <a href="homepage.php">Back to Homepage</a></p>
     </div>
     <table border="1">
