@@ -1,5 +1,7 @@
 <?php
 session_start();
+$exists = false;
+$showError = false;
 
 // Process form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -18,20 +20,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($num == 1){
         $row = mysqli_fetch_assoc($result);
+        $username = $row['name'];
+        $idusers = $row['idusers'];
         $stored_hash = $row['password'];
         
 
         //Verify password
         if (password_verify($password, $stored_hash)) {
             // correct password
-            echo "Login sucessful";
+            // Set session variables
+            $_SESSION['username']= $username;
+            $_SESSION['email']= $email;
+            $_SESSION['idusers']=$idusers;
+            $_SESSION['loggedin']= true;
             header("Location: homepage.php");
 
         } else {
-            echo "Invaild Password";
+            $showError = "Invaild Password";
         }
     } else {
-        echo "Email not exists.";
+        $exists = "Email not exists.";
     }
 
     $stmt->close();
@@ -49,12 +57,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <?php 
+
+    if($exists) { 
+        echo '<div class="alert alert-danger" role="alert"> 
+
+        <strong>Error!</strong> '. $exists.' 
+    </div>';  
+    }
+
+    if ($showError) {
+        echo '<div class="alert alert-danger" role="alert"> 
+
+        <strong>Error!</strong> '. $showError.' 
+    </div>';  
+    }
+
+    ?>
     <div class="login-container">
         <h2>Login</h2>
         <form method="POST">
             <input type="email" name="email" placeholder="Email" required>
             <input type="password" name="password" placeholder="Password" required>
             <input type="submit" value="Login">
+            <a href="register.php">Register page</a>
         </form>
 
     </div>

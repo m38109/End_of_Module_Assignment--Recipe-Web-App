@@ -41,6 +41,8 @@ body {
     background-color: #45a049;
 }
 
+
+
 /* General alert styles */
 .alert {
     padding: 15px;
@@ -67,11 +69,10 @@ body {
 
 /* style for recipe page */
 .recipecontainer {
-    max-width: 1200px;
-    margin: 100px auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    position: relative;
 }
 
 .recipecontainer h1 {
@@ -89,6 +90,7 @@ body {
 .recipecontainer img {
     display: block;
     margin: 0 auto;
+    max-width: 200px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
@@ -115,6 +117,20 @@ body {
     line-height: 1.4;
 }
 
+.back-link{
+    position:absolute;
+    top:20px;
+    right: 20px;
+    color: blue;
+    text-decoration: none;
+    
+}
+
+.back-link:hover {
+    color: darkblue;
+    text-decoration: underline;
+}
+
 @media (max-width: 600px) {
     .recipecontainer body {
         padding: 0 10px;
@@ -128,4 +144,43 @@ body {
     .recipecontainer p, ul, ol {
         padding: 0 10px;
     }
+    
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+    padding: 10px;
+    border-bottom: 2px solid black;
+    font-family: Arial, sans-serif;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 300%;
+}
+
+.header p{
+    margin:10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
 }
